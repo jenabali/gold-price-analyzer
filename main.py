@@ -19,7 +19,7 @@ def plot_data(df: pd.DataFrame) -> None:
 
 
 def main() -> None:
-    df = get_gold_data(api_key="N9VU8OJ7R2SB90JC")
+    df = get_gold_data()
     df['ema20'] = ema(df['close'], span=20)
     df['ema50'] = ema(df['close'], span=50)
     df['rsi'] = rsi(df['close'])

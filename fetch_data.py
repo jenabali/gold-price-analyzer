@@ -15,6 +15,7 @@ def get_gold_data(api_key: Optional[str] = None) -> pd.DataFrame:
     response = requests.get(url, timeout=10)
     response.raise_for_status()
     print("Full API Response:", response.json())
+    print("✅ درخواست انجام شد.")
     data = response.json().get("Time Series FX (Daily)", {})
     if not data:
         raise ValueError("No data returned from API")
